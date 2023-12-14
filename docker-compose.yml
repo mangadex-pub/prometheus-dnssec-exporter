@@ -1,0 +1,16 @@
+services:
+  teeproxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    cap_drop: [ ALL ]
+    read_only: true
+    environment:
+      LISTEN_ADDR: "0.0.0.0:8000"
+      RESOLVERS: "8.8.8.8:53,1.1.1.1:53"
+      TIMEOUT: "5s"
+      CONFIG: "/configs/config"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./config.sample:/configs/config:ro

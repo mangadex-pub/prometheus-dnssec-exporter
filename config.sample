@@ -1,9 +1,4 @@
 [[records]]
-  zone = "ietf.org"
-  record = "@"
-  type = "SOA"
-
-[[records]]
-  zone = "verisigninc.com"
+  zone = "mangadex.org"
   record = "@"
   type = "SOA"
